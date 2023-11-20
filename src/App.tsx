@@ -1,9 +1,8 @@
 import React, { PropsWithChildren } from "react";
-import { useAppSelector, useAppDispatch } from "./hooks/redux";
+import Router from "./Router";
 
 const App: React.FC<PropsWithChildren<{}>> = () => {
-  const dispatch = useAppDispatch();
-  return <div>Mirco Book Store - Development</div>;
+  return <Router />;
 };
 
 export default App;
