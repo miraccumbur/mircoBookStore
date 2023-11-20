@@ -41,3 +41,15 @@
   50%  {transform: scale(0.3)rotateY(90deg);;}
   100% {transform: scale(1)rotateY(0deg);;}
 }
+
+@media (max-width:500px){
+  .header{
+    height: 65px;
+  }
+  .basketIcon {
+    height: 35%;
+  }
+  .hamburgerMenuIcon {
+    height: 35%;
+  }
+}

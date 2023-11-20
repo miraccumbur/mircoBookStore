@@ -6,8 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import Loading from "./components/Loading";
-// import Home from "./screens/Home";
-// import Detail from "./screens/Detail";
+
 const Home = React.lazy(() => import("./screens/Home"));
 const Detail = React.lazy(() => import("./screens/Detail"));
 const Basket = React.lazy(() => import("./screens/Basket"));

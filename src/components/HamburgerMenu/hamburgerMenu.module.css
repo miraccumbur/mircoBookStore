@@ -9,6 +9,7 @@
   box-sizing: border-box;
   border-right: 1px solid var(--mint-green);
 }
+
 .hamburgerMenuOpened {
   left: 0px;
   transition: 0.4s ease-in;
@@ -35,4 +36,17 @@
 .menuItemIcon{
     height: 100%;
     margin-right: 10px;
+}
+
+@media (max-width:500px){
+  .hamburgerMenu {
+    top: 65px;
+    width: 100vw;
+    border-right: 0;
+    border-top: 1px solid var(--mint-green);
+  }
+  
+  .hamburgerMenuClosed {
+    left: -100vw;
+  }
 }
