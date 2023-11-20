@@ -1,0 +1,41 @@
+.button {
+  width: 100px;
+  height: 40px;
+  border-radius: 0;
+  outline: 0;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  color: var(--white);
+  font-family: "BebasNeue";
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@media (max-width:820px) {
+    .button{
+        width: 87.5px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:680px) {
+    .button{
+        width: 62.5px;
+        height: 25px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:500px) {
+    .button{
+        width: 50px;
+        height: 20px;
+        font-size: 8px;
+    }
+}

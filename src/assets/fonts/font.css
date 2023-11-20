@@ -4,3 +4,9 @@
     url("./Open_Sans/OpenSans-VariableFont_wdth,wght.ttf")
       format("truetype");
 }
+@font-face {
+  font-family: "BebasNeue";
+  src: local("BebasNeue"),
+    url("./Bebas_Neue/BebasNeue-Regular.ttf")
+      format("truetype");
+}

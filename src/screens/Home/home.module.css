@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--mint-green-light);
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.searchField {
+  width: 65%;
+  height: 70px;
+  border-radius: 40px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 1px 1px 52px -9px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 1px 1px 52px -9px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 1px 1px 52px -9px rgba(0, 0, 0, 0.8);
+  background-color: var(--white);
+}
+
+.searchInput {
+  border: 0;
+  height: 100%;
+  width: 75%;
+  padding: 10px 20px;
+  font-family: "OpenSans";
+  font-size: 24px;
+  border-right: 1px solid var(--gray-2);
+  border-radius: 40px 0 0 40px;
+  z-index: 1;
+}
+
+.searchInput:focus-visible {
+  outline: 0;
+}
+
+.searchButton {
+  width: 25%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0 40px 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "OpenSans";
+  font-size: 20px;
+  color: var(--mint-green);
+  background-color: black;
+}
+.searchButton:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 52px -9px var(--mint-green-dark);
+  -webkit-box-shadow: 1px 1px 52px -9px var(--mint-green-dark);
+  -moz-box-shadow: 1px 1px 52px -9px var(--mint-green-dark);
+}
+
+.searchIcon {
+  height: 40%;
+  margin-right: 10px;
+}
+
+@media (max-width: 1070px) {
+  .searchField {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchField {
+    width: 85%;
+    height: 60px;
+  }
+  .searchInput {
+    width: 70%;
+    font-size: 20px;
+  }
+
+  .searchButton {
+    width: 30%;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .searchField {
+    width: 85%;
+    height: 50px;
+  }
+
+  .searchInput {
+    width: 70%;
+    font-size: 16px;
+  }
+
+  .searchButton {
+    width: 30%;
+    font-size: 16px;
+  }
+
+  .searchIcon {
+    height: 35%;
+    margin-right: 10px;
+  }
+}

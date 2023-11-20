@@ -3,6 +3,7 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { setHamburgerMenuStatus } from "../../redux/hamburgerMenuReducer";
 import { AppDispatch, AppState } from "../../redux/store";
+import classcat from "classcat";
 
 import HamburgerMenu from "../HamburgerMenu";
 
@@ -12,7 +13,6 @@ import logoImg from "../../assets/images/logo/logo.png";
 import basketGreenIcon from "../../assets/icons/basket/basketGreen.png";
 import hamburgerMenuIcon from "../../assets/icons/header/menu.png";
 import hamburgerMenuCloseIcon from "../../assets/icons/header/close.png";
-import classcat from "classcat";
 
 const Header: React.FC<PropsWithChildren<{}>> = () => {
   const navigate: NavigateFunction = useNavigate();
