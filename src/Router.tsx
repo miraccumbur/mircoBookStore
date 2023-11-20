@@ -4,7 +4,6 @@ import {
   RouterProvider,
   createRoutesFromElements,
   Route,
-  Routes
 } from "react-router-dom";
 // import Home from "./screens/Home";
 // import Detail from "./screens/Detail";
@@ -14,11 +13,11 @@ const Basket = React.lazy(() => import("./screens/Basket"));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Routes>
+    <>
       <Route path="/" element={<Home />} />
       <Route path="/detail/:id" element={<Detail />} />
-      <Route path="/basket/" element={<Basket />} />
-    </Routes>
+      <Route path="/basket" element={<Basket />} />
+    </>
   )
 );
 
