@@ -1,0 +1,38 @@
+.hamburgerMenu {
+  position: absolute;
+  width: 350px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--black);
+  top: 80px;
+  transition: 0.4s ease-out;
+  box-sizing: border-box;
+  border-right: 1px solid var(--mint-green);
+}
+.hamburgerMenuOpened {
+  left: 0px;
+  transition: 0.4s ease-in;
+}
+
+.hamburgerMenuClosed {
+  left: -350px;
+  transition: 0.4s ease;
+}
+
+.menuItem{
+    color: var(--mint-green);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    font-family: 'OpenSans';
+    cursor: pointer;
+}
+.menuItem:hover{
+  background-color: var(--gray-1);
+}
+
+.menuItemIcon{
+    height: 100%;
+    margin-right: 10px;
+}

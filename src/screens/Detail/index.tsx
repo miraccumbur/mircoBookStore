@@ -1,8 +1,11 @@
 import React, { PropsWithChildren } from 'react'
+import Header from '../../components/Header'
 
 const Detail: React.FC<PropsWithChildren<{}>> = () => {
   return (
-    <div>Detail Page</div>
+    <div>
+      <Header />
+      Detail Page</div>
   )
 }
 

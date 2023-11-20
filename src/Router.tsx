@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import Loading from "./components/Loading";
 // import Home from "./screens/Home";
 // import Detail from "./screens/Detail";
 const Home = React.lazy(() => import("./screens/Home"));
@@ -22,7 +23,11 @@ const router = createBrowserRouter(
 );
 
 const Router: React.FC<PropsWithChildren<{}>> = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <React.Suspense fallback={<Loading />}>
+      <RouterProvider router={router} />
+    </React.Suspense>
+  );
 };
 
 export default Router;
