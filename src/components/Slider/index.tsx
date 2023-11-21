@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 import "./slider.css";
 
 const Slider: React.FC<PropsWithChildren<{ data: Books }>> = ({ data }) => {
-const navigate: NavigateFunction = useNavigate()
+  const navigate: NavigateFunction = useNavigate();
   return (
     <Swiper
       slidesPerView={1}
@@ -37,10 +37,14 @@ const navigate: NavigateFunction = useNavigate()
                 <div className={c.contentRightField}>
                   <div className={c.title}>{data.title}</div>
                   <div className={c.subtitle}>{data.subtitle}</div>
-                  <div className={c.isbn}>{data.isbn13}</div>
+                  <div className={c.isbn}>ISBN: {data.isbn13}</div>
                   <div className={c.priceField}>
                     <div className={c.price}>{data.price}</div>
-                    <Button text='Detail' onClick={() => navigate('/detail/'+data.isbn13)}/>
+                    <Button
+                      text="Detail"
+                      onClick={() => navigate("/detail/" + data.isbn13)}
+                      className={c.button}
+                    />
                   </div>
                 </div>
               </div>

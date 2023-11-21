@@ -1,11 +1,14 @@
 .container{
-    width: 100%;
-    min-height: 100%;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
     z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
 }
 .ldsRing {
     display: inline-block;

@@ -1,14 +1,19 @@
 import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 import Header from "../../components/Header";
 import sendRequest from "../../services/request";
-import { BookResponse, Books } from "../../types/Book";
+import { Book, BookResponse, Books } from "../../types/Book";
 
 import c from "./home.module.css";
 
 import searchIcon from "../../assets/icons/home/search.png";
 import Slider from "../../components/Slider";
+import { AppDispatch } from "../../redux/store";
+import { useAppDispatch } from "../../hooks/redux";
+import { setLoading } from "../../redux/loadingReducer";
+import BookCard from "../../components/BookCard";
 
 const Home: React.FC<PropsWithChildren<{}>> = () => {
+  const dispatch: AppDispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
   const [searchInputValue, setSearchInputValue] = useState<string>("");
   const [newBooks, setNewBooks] = useState<Books>();
@@ -19,12 +24,15 @@ const Home: React.FC<PropsWithChildren<{}>> = () => {
 
   const getNewBooks = async (): Promise<void> => {
     try {
+      dispatch(setLoading(true));
       const data: BookResponse = await sendRequest(
         process.env.REACT_APP_API_URL + "new",
         "get"
       );
       setNewBooks(data.data);
+      dispatch(setLoading(false));
     } catch (error) {
+      dispatch(setLoading(false));
       console.log(error);
     }
   };
@@ -62,6 +70,13 @@ const Home: React.FC<PropsWithChildren<{}>> = () => {
           <img src={searchIcon} alt="search" className={c.searchIcon} />
           Search
         </div>
+      </div>
+
+      <div className={c.bookCardField}>
+        {newBooks &&
+          newBooks.books.map((data: Book) => {
+            return <BookCard key={data.isbn13} data={data}/>;
+          })}
       </div>
     </div>
   );

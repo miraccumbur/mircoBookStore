@@ -108,7 +108,12 @@
   }
 
   .price {
-    font-size: 20px;
+    font-size: 32px;
+  }
+  .button {
+    width: 87.5px;
+    height: 35px;
+    font-size: 16px;
   }
 }
 
@@ -126,28 +131,42 @@
   }
 
   .price {
-    font-size: 14px;
+    font-size: 20px;
+  }
+  .button {
+    width: 62.5px;
+    height: 25px;
+    font-size: 12px;
   }
 }
 
-
 @media (max-width: 500px) {
-    .content{
-        padding: 0;
-    }
-    .title {
-      font-size: 16px;
-    }
-  
-    .subtitle {
-      font-size: 8px;
-    }
-  
-    .isbn {
-      font-size: 6px;
-    }
-  
-    .price {
-      font-size: 10px;
-    }
+  .content {
+    padding: 0;
   }
+
+  .contentRightField {
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .isbn {
+    font-size: 8px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+  .button {
+    width: 50px;
+    height: 20px;
+    font-size: 8px;
+  }
+}

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import hamburgerMenuReducer from "./hamburgerMenuReducer";
+import loadingReducer from "./loadingReducer";
 
 export const store = configureStore({
   reducer: {
     hamburgerMenu: hamburgerMenuReducer,
+    loading: loadingReducer,
   },
 });
 
