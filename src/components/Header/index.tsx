@@ -11,6 +11,7 @@ import c from "./header.module.css";
 
 import logoImg from "../../assets/images/logo/logo.png";
 import basketGreenIcon from "../../assets/icons/basket/basketGreen.png";
+import basketGreenFullIcon from "../../assets/icons/basket/basketGreenFull.png";
 import hamburgerMenuIcon from "../../assets/icons/header/menu.png";
 import hamburgerMenuCloseIcon from "../../assets/icons/header/close.png";
 

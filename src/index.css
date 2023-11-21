@@ -91,11 +91,12 @@ video {
 
 :root {
   --mint-green: #cfffe5;
-  --mint-green-light: rgba(207,255,229,0.5);
+  --mint-green-light: rgba(207, 255, 229, 0.5);
   --mint-green-dark: #93ffc4;
   --white: #ffffff;
   --black: #000000;
   --gray-1: #171717;
   --gray-2: #dddddd;
   --gray-3: #bbbbbb;
+  --red: #bf0a04;
 }
