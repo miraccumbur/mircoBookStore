@@ -113,7 +113,7 @@ const Home: React.FC<PropsWithChildren<{}>> = () => {
             return <BookCard key={data.isbn13} data={data} />;
           })}
       </div>
-      <Footer />
+      <Footer className={c.footer}/>
     </div>
   );
 };

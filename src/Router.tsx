@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import Loading from "./components/Loading";
+import Header from "./components/Header";
 
 const Home = React.lazy(() => import("./screens/Home"));
 const Detail = React.lazy(() => import("./screens/Detail"));

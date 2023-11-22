@@ -3,6 +3,7 @@
   aspect-ratio: 3;
   height: auto;
   background-color: var(--black);
+  margin-top: 80px;
 }
 
 .swiper-wrapper {
@@ -70,5 +71,6 @@
 
   .swiper{
     aspect-ratio: 1.75;
+    margin-top: 60px;
   }
 }
