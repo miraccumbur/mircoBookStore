@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { useParams } from "react-router-dom";
 import { AppDispatch } from "../../redux/store";
-import { useAppDispatch } from "../../hooks/redux";
+import { useAppDispatch } from "../../hooks/useRedux";
 import { setLoading } from "../../redux/loadingReducer";
 import sendRequest from "../../services/request";
 import { BookDetail, BookDetailResponse } from "../../types/Book";
@@ -13,6 +13,8 @@ import c from "./detail.module.css";
 import Loading from "../../components/Loading";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
+import { addToCart } from "../../redux/cartReducer";
+import { setModal } from "../../redux/modalReducer";
 
 const Detail: React.FC<PropsWithChildren<{}>> = () => {
   const params = useParams<DetailParams>();
@@ -39,7 +41,6 @@ const Detail: React.FC<PropsWithChildren<{}>> = () => {
     }
   };
 
-  const handleAddToCartClick = (): void => {};
   if (!bookData) return <Loading />;
   return (
     <div className={c.container}>
@@ -67,7 +68,19 @@ const Detail: React.FC<PropsWithChildren<{}>> = () => {
               <div className={c.price}>{bookData.price}</div>
               <Button
                 text="Add To Cart"
-                onClick={handleAddToCartClick}
+                onClick={() => {
+                  dispatch(
+                    addToCart({
+                      isbn13: bookData.isbn13,
+                      title: bookData.title,
+                      image: bookData.image,
+                      price: bookData.price,
+                      subtitle: bookData.subtitle,
+                      url: bookData.url,
+                    })
+                  );
+                  dispatch(setModal({ value: true, type: "cart" }));
+                }}
                 className={c.button}
               />
             </div>

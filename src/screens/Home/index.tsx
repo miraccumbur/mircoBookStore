@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 import sendRequest from "../../services/request";
 import { Book, BookResponse, Books } from "../../types/Book";
 import { AppDispatch } from "../../redux/store";
-import { useAppDispatch } from "../../hooks/redux";
+import { useAppDispatch } from "../../hooks/useRedux";
 import { setLoading } from "../../redux/loadingReducer";
 
 import Header from "../../components/Header";

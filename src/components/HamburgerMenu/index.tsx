@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import classcat from "classcat";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 import { AppDispatch, AppState } from "../../redux/store";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 

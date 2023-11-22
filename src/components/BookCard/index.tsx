@@ -4,8 +4,13 @@ import c from "./bookCard.module.css";
 import { Book } from "../../types/Book";
 import Button from "../Button";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import { AppDispatch } from "../../redux/store";
+import { useAppDispatch } from "../../hooks/useRedux";
+import { addToCart } from "../../redux/cartReducer";
+import { setModal } from "../../redux/modalReducer";
 
 const BookCard: React.FC<PropsWithChildren<{ data: Book }>> = ({ data }) => {
+  const dispatch: AppDispatch = useAppDispatch();
   const navigate: NavigateFunction = useNavigate();
   return (
     <div className={c.container}>
@@ -21,7 +26,19 @@ const BookCard: React.FC<PropsWithChildren<{ data: Book }>> = ({ data }) => {
         />
         <Button
           text="Add To Cart"
-          onClick={() => navigate("/detail/" + data.isbn13)}
+          onClick={() => {
+            dispatch(
+              addToCart({
+                isbn13: data.isbn13,
+                title: data.title,
+                image: data.image,
+                price: data.price,
+                subtitle: data.subtitle,
+                url: data.url,
+              })
+            );
+            dispatch(setModal({ value: true, type: "cart" }));
+          }}
           className={c.button}
         />
       </div>
