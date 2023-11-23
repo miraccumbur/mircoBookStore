@@ -14,7 +14,7 @@ const Checkbox: React.FC<
     inputClassName?: string;
     labelClassName?: string;
     containerClassName?: string;
-    error:boolean
+    error: boolean;
   }>
 > = ({
   label,
@@ -24,15 +24,13 @@ const Checkbox: React.FC<
   inputClassName,
   labelClassName,
   containerClassName,
-  error
+  error,
 }) => {
-
-    useEffect(()=>{
-        console.log(value)
-    },[value])
   return (
     <div className={classcat([c.container, containerClassName])}>
-      <label className={classcat([c.label, labelClassName, error && c.errorLabel])}>
+      <label
+        className={classcat([c.label, labelClassName, error && c.errorLabel])}
+      >
         <input
           className={classcat([c.input, inputClassName])}
           type="checkbox"
@@ -40,10 +38,10 @@ const Checkbox: React.FC<
             setValue(!value);
           }}
         />
+
+        {/* check icon */}
         <svg
           className={classcat([c.checkbox, error && c.errorCheckbox])}
-          // This element is purely decorative so
-          // we hide it for screen readers
           aria-hidden="true"
           viewBox="0 0 15 11"
           fill="none"
@@ -51,7 +49,7 @@ const Checkbox: React.FC<
           <path
             d="M1 4.5L5 9L14 1"
             strokeWidth="2"
-            stroke={value ? "#000" : "none"} // only show the checkmark when `isCheck` is `true`
+            stroke={value ? "#000" : "none"}
           />
         </svg>
         {label}

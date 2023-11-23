@@ -27,6 +27,7 @@ const Home: React.FC<PropsWithChildren<{}>> = () => {
     getNewBooks();
   }, []);
 
+  // this function pull new and featured book data from api
   const getNewBooks = async (): Promise<void> => {
     try {
       dispatch(setLoading(true));
@@ -34,7 +35,6 @@ const Home: React.FC<PropsWithChildren<{}>> = () => {
         process.env.REACT_APP_API_URL + "new",
         "get"
       );
-      console.log("data", data);
       setNewBooks(data.data);
       dispatch(setLoading(false));
     } catch (error) {
@@ -43,6 +43,7 @@ const Home: React.FC<PropsWithChildren<{}>> = () => {
     }
   };
 
+  // search function
   const handleSearch = async (): Promise<void> => {
     try {
       dispatch(setLoading(true));

@@ -18,7 +18,7 @@ const App: React.FC<PropsWithChildren<{}>> = () => {
   const loading = useAppSelector((state: AppState) => state.loading.value);
   const modal = useAppSelector((state: AppState) => state.modal);
 
-  //this added for use out of route
+  //this added for use navigate function out of route
   window.navigate = navigate;
 
   return (

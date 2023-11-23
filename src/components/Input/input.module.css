@@ -19,6 +19,7 @@
   width: 100%;
   font-family: "OpenSans";
   font-size: 16px;
+  padding: 3px 5px;
 }
 
 .errorInput {
@@ -35,4 +36,18 @@
 
 .text {
   height: 40px;
+}
+
+@media (max-width: 500px) {
+  .label {
+    font-size: 20px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .text {
+    height: 35px;
+  }
 }

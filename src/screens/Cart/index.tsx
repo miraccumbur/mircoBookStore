@@ -19,6 +19,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
     <div className={c.container}>
       <Header />
       <div className={c.contentField}>
+        {/* top field */}
         <div className={c.contentTop}>
           <div>Cart</div>
           {cart.value.length > 0 && (
@@ -28,6 +29,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
           )}
         </div>
 
+        {/* item field */}
         <div className={c.itemField}>
           {cart.value.map((data: ICart) => {
             return (
@@ -62,6 +64,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
           })}
         </div>
 
+        {/* total price, button and empty state are show here */}
         {cart.value.length > 0 ? (
           <div className={c.priceField}>
             <div className={c.totalPrice}>
@@ -71,7 +74,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
             <Button
               text="Checkout"
               onClick={() => {
-                dispatch(setModal({ value: false }));
+                dispatch(setModal({ status: false, value: {} }));
                 navigate("/checkout");
               }}
               className={c.button}

@@ -6,6 +6,7 @@ const Loading: React.FC<PropsWithChildren<{}>> = () => {
   return (
     <div className={c.container}>
       <div className={c.ldsRing}>
+        {/* these div's for loading animation */}
         <div></div>
         <div></div>
         <div></div>

@@ -11,6 +11,10 @@ export const store = configureStore({
     modal: modalReducer,
     cart: cartReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export type AppState = ReturnType<typeof store.getState>;

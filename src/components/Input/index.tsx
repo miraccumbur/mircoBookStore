@@ -16,6 +16,7 @@ const Input: React.FC<
     labelClassName?: string;
     containerClassName?: string;
     error: boolean;
+    onKeyUp?: (key: number) => void;
   }>
 > = ({
   label,
@@ -27,6 +28,7 @@ const Input: React.FC<
   labelClassName,
   containerClassName,
   error,
+  onKeyUp,
 }) => {
   return (
     <div className={classcat([c.container, containerClassName])}>
@@ -34,6 +36,7 @@ const Input: React.FC<
         className={classcat([c.label, labelClassName, error && c.errorLabel])}
       >
         {label}
+
         {type === "textarea" && (
           <textarea
             className={classcat([
@@ -49,6 +52,7 @@ const Input: React.FC<
             }}
           />
         )}
+
         {(type === "text" || type === "number" || type === "email") && (
           <input
             className={classcat([
@@ -60,6 +64,9 @@ const Input: React.FC<
             type={type}
             value={value}
             placeholder={placeholder}
+            onKeyUp={(e) => {
+              if (onKeyUp) onKeyUp(e.keyCode);
+            }}
             onChange={(e) => {
               setValue(e.target.value);
             }}

@@ -26,6 +26,7 @@ const Detail: React.FC<PropsWithChildren<{}>> = () => {
     getData();
   }, []);
 
+  // this function pull book detail date from api
   const getData = async (): Promise<void> => {
     try {
       dispatch(setLoading(true));
@@ -33,7 +34,6 @@ const Detail: React.FC<PropsWithChildren<{}>> = () => {
         process.env.REACT_APP_API_URL + "books/" + params.isbn,
         "get"
       );
-      console.log(data.data);
       setBookData(data.data);
       dispatch(setLoading(false));
     } catch (error) {
@@ -79,7 +79,9 @@ const Detail: React.FC<PropsWithChildren<{}>> = () => {
                       url: bookData.url,
                     })
                   );
-                  dispatch(setModal({ value: true, type: "cart" }));
+                  dispatch(
+                    setModal({ status: false, type: "cart", value: {} })
+                  );
                 }}
                 className={c.button}
               />

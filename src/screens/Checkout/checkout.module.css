@@ -159,10 +159,92 @@
     margin-top: 100px;
     width: 90%;
   }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .itemTitle {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .totalPrice {
+    font-size: 32px;
+  }
+
+  .nameSurnameAndMailPhoneField {
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+  .nameSurnameMailPhoneInputContainer {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .paymentField {
+    flex-wrap: wrap;
+  }
+  .cardExpireDateAndCvv {
+    width: 49%;
+  }
 }
 
 @media (max-width: 500px) {
   .contentField {
     margin-top: 90px;
+  }
+
+  .seperator {
+    margin: 10px 0 10px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .itemTitle {
+    font-size: 18px;
+  }
+
+  .isbn {
+    font-size: 9px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .totalPrice {
+    font-size: 24px;
+  }
+
+  .goToCartButton{
+    width: auto;
+  }
+
+  .nameSurnameAndMailPhoneField {
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+  .nameSurnameMailPhoneInputContainer {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .paymentField {
+    flex-wrap: wrap;
+  }
+  .cardExpireDateAndCvv {
+    width: 49%;
+  }
+
+  .errorMessage {
+    font-family: "BebasNeue";
+    font-size: 24px;
+    width: 100%;
+    color: var(--red);
+    margin-top: 20px;
   }
 }

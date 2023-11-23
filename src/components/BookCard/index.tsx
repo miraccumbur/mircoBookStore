@@ -37,7 +37,7 @@ const BookCard: React.FC<PropsWithChildren<{ data: Book }>> = ({ data }) => {
                 url: data.url,
               })
             );
-            dispatch(setModal({ value: true, type: "cart" }));
+            dispatch(setModal({ status: false, value: {}, type: "cart" }));
           }}
           className={c.button}
         />

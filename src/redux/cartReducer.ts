@@ -3,7 +3,9 @@ import type { AppState } from "./store";
 import { ICartValue } from "../types/Cart";
 import { Book } from "../types/Book";
 
-const localCartData: ICartValue = JSON.parse(localStorage.getItem('cart') || '{}')
+const localCartData: ICartValue = JSON.parse(
+  localStorage.getItem("cart") || "{}"
+);
 
 const initialState: ICartValue = {
   value: localCartData.value || [],
@@ -32,6 +34,7 @@ export const cartReducer = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // add new item to cart
     addToCart: (state, action: PayloadAction<Book>) => {
       if (state.value.length > 0) {
         let control: number = -1;
@@ -63,15 +66,17 @@ export const cartReducer = createSlice({
         ];
       }
       state.totalPrice = totalPriceUpdater(state);
-      updateLocalStorage(state)
+      updateLocalStorage(state);
     },
 
+    // increment item count
     increment: (state, action: PayloadAction<string>) => {
       state.value.find((data) => data.isbn === action.payload)!.count += 1;
       state.totalPrice = totalPriceUpdater(state);
-      updateLocalStorage(state)
+      updateLocalStorage(state);
     },
 
+    // decrementIconCount
     decrement: (state, action: PayloadAction<string>) => {
       const index = state.value.findIndex(
         (data) => data.isbn === action.payload
@@ -82,13 +87,14 @@ export const cartReducer = createSlice({
         state.value.splice(index, 1);
       }
       state.totalPrice = totalPriceUpdater(state);
-      updateLocalStorage(state)
+      updateLocalStorage(state);
     },
 
+    // remove all items from cart
     clearCart: (state) => {
       state.value = [];
       state.totalPrice = 0.0;
-      updateLocalStorage(state)
+      updateLocalStorage(state);
     },
   },
 });

@@ -11,7 +11,11 @@ const Button: React.FC<
   }>
 > = ({ text, onClick, className }) => {
   return (
-    <button type="button" className={classcat([c.button, className])} onClick={onClick}>
+    <button
+      type="button"
+      className={classcat([c.button, className])}
+      onClick={onClick}
+    >
       {text}
     </button>
   );

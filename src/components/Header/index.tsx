@@ -14,9 +14,9 @@ import basketGreenIcon from "../../assets/icons/cart/basketGreen.png";
 import basketGreenFullIcon from "../../assets/icons/cart/basketGreenFull.png";
 import hamburgerMenuIcon from "../../assets/icons/header/menu.png";
 import hamburgerMenuCloseIcon from "../../assets/icons/header/close.png";
-import { IModalState } from "../../types/Modal";
+import { IModalState, ISuccessModal } from "../../types/Modal";
 import { setModal } from "../../redux/modalReducer";
-import { ICartValue } from "../../types/Cart";
+import { ICart, ICartValue } from "../../types/Cart";
 import useIsMobile from "../../hooks/useIsMobile";
 
 const Header: React.FC<PropsWithChildren<{}>> = () => {
@@ -27,17 +27,20 @@ const Header: React.FC<PropsWithChildren<{}>> = () => {
   const hamburgerMenuStatus: boolean = useAppSelector(
     (state: AppState) => state.hamburgerMenu.value
   );
-  const modal: IModalState = useAppSelector((state: AppState) => state.modal);
+  const modal: IModalState<ISuccessModal | ICart | boolean> = useAppSelector(
+    (state: AppState) => state.modal
+  );
   const cart: ICartValue = useAppSelector((state: AppState) => state.cart);
 
   const [hamburgerMenuButtonActive, setHamburgerMenuButtonActive] =
     useState<boolean>(false);
 
+  //these code for hamburger menu button animation
   useEffect(() => {
     if (hamburgerMenuButtonActive) {
       setTimeout(() => {
         setHamburgerMenuButtonActive(false);
-      }, 401);
+      }, 400);
     }
   }, [hamburgerMenuButtonActive]);
 
@@ -50,14 +53,14 @@ const Header: React.FC<PropsWithChildren<{}>> = () => {
     navigate("/");
   };
 
+  //when window size is not a mobile size, cart popup opened but window size is mobile size, it is not show.
   const handleCartIcon = (): void => {
-    if (modal.value && modal.type === "cart" && !isMobile) {
-      dispatch(setModal({ value: false }));
-    } else if (!modal.value && !isMobile) {
-      dispatch(setModal({ value: true, type: "cart" }));
-    }
-    else{
-      navigate('/cart')
+    if (modal.status && modal.type === "cart" && !isMobile) {
+      dispatch(setModal({ status: false, value: {} }));
+    } else if (!modal.status && !isMobile) {
+      dispatch(setModal({ status: true, type: "cart", value: {} }));
+    } else {
+      navigate("/cart");
     }
   };
 

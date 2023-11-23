@@ -12,20 +12,16 @@ import { setModal } from "../../redux/modalReducer";
 const CartModal: React.FC<PropsWithChildren<{}>> = () => {
   const dispatch: AppDispatch = useAppDispatch();
   const navigate: NavigateFunction = useNavigate();
-
-  const modalData: ICart | boolean = useAppSelector(
-    (state: AppState) => state.modal.value
-  );
   const cart: ICartValue = useAppSelector((state: AppState) => state.cart);
 
-  console.log("inCart", cart);
   return (
     <div className={c.container}>
+
       <div className={c.cartSummaryTop}>
         <div>Cart Summary</div>
         <div
           className={c.close}
-          onClick={() => dispatch(setModal({ value: false }))}
+          onClick={() => dispatch(setModal({ status: false, value: {} }))}
         >
           X
         </div>
@@ -86,7 +82,7 @@ const CartModal: React.FC<PropsWithChildren<{}>> = () => {
       <Button
         text="Go My Cart"
         onClick={() => {
-          dispatch(setModal({ value: false }));
+          dispatch(setModal({ status: false, value: {} }));
           navigate("/cart");
         }}
         className={c.button}

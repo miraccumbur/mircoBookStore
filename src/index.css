@@ -94,7 +94,9 @@ video {
   --mint-green-light: rgba(207, 255, 229, 0.5);
   --mint-green-dark: #93ffc4;
   --white: #ffffff;
+  --white-opacity-2: rgba(225507, 255, 255, 0.2);
   --black: #000000;
+  --black-opacity-4: rgba(0, 0, 0, 0.4);
   --gray-1: #171717;
   --gray-2: #dddddd;
   --gray-3: #bbbbbb;
