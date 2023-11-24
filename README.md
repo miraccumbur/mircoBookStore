@@ -13,7 +13,7 @@ React-router-dom is used for route control and configuration. The react-router-d
 
 ## What are the APIs used?
 
-Only one api was used during the development of this project. This api is the [ItBook](https://api.itbook.store/) api. This is the api that will allow us to use this api in our project "https://api .itbook.store is /1.0/". This api has three endpoints. These;
+Only one api was used during the development of this project. This api is the [ItBook](https://api.itbook.store/) api. This is the api that will allow us to use this api in our project "https://api.itbook.store is /1.0/". This api has three endpoints. These;
 
 ### /search/{query}
 
