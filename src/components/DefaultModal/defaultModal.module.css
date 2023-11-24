@@ -1,0 +1,78 @@
+.container{
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    min-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--white-opacity-2);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    width: 85%;
+    min-height: 200px;
+    background-color: var(--black);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.close{
+    font-family: 'BebasNeue';
+    font-size: 32px;
+    align-self: flex-end;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.close:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.icon{
+    width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.title{
+    font-family: 'BebasNeue';
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.message{
+    font-family: 'BebasNeue';
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+@media (max-width:500px) {
+    .close{
+        position: absolute;
+        top: 10px;
+    }
+    .modal{
+        height: 100vh;
+        justify-content: center;
+        width: 100vw;
+    }
+}

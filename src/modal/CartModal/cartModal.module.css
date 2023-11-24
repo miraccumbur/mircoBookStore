@@ -1,0 +1,206 @@
+.container {
+  position: fixed;
+  right: 20px;
+  top: 90px;
+  z-index: 4;
+  width: 500px;
+  /* height: 500px; */
+  background-color: var(--black);
+  -webkit-box-shadow: 0px 0px 30px -5px rgba(30, 30, 30, 1);
+  -moz-box-shadow: 0 0 30px -5px rgba(30, 30, 30, 1);
+  box-shadow: 0 0 30px -5px rgba(30, 30, 30, 1);
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartSummaryTop {
+  width: 100%;
+  font-family: "BebasNeue";
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+}
+
+.close:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.clear {
+  font-size: 20px;
+  font-family: "BebasNeue";
+  color: var(--gray-3);
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.clear:hover {
+  transform: scale(1.1);
+}
+
+.itemField {
+  max-height: 350px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+.item {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  border-bottom: 1px solid var(--gray-1);
+}
+
+.image {
+  height: 100%;
+  max-width: 30%;
+  object-fit: contain;
+}
+
+.infoArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-family: "BebasNeue";
+  color: var(--white);
+  font-size: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.isbn {
+  font-family: "OpenSans";
+  color: var(--gray-3);
+  font-size: 12px;
+}
+
+.priceArea {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  font-family: "BebasNeue";
+  color: var(--white);
+  font-size: 28px;
+}
+
+.priceAreaBottom {
+  /* height: 30px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.incrementDecrement {
+  font-family: "BebasNeue";
+  color: var(--white);
+  font-size: 48px;
+  height: 30px;
+  line-height: 30px;
+  width: 20px;
+  text-align: center;
+}
+
+.incrementDecrement:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: var(--mint-green);
+}
+
+.count {
+  font-family: "BebasNeue";
+  color: var(--white);
+  font-size: 32px;
+}
+
+.totalPrice {
+  font-family: "BebasNeue";
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.empty {
+  font-family: "BebasNeue";
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.button {
+  min-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 400px;
+    right: 10px;
+    top: 70px;
+  }
+
+  .cartSummaryTop {
+    font-size: 28px;
+  }
+
+  .clear {
+    font-size: 16px;
+  }
+
+  .itemField {
+    max-height: 235px;
+  }
+
+  .item {
+    height: 100px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .isbn {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .incrementDecrement {
+    font-size: 40px;
+  }
+
+  .count {
+    font-size: 28px;
+  }
+
+  .totalPrice {
+    font-size: 28px;
+  }
+
+  .empty {
+    font-size: 28px;
+  }
+}
+
+@media (max-width:500px) {
+  .container{
+    display: none;
+  }
+}

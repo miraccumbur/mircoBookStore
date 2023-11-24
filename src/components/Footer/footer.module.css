@@ -1,0 +1,38 @@
+.container {
+  width: 100vw;
+  height: 100px;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  width: auto;
+  height: 75px;
+}
+
+.text {
+  font-family: "BebasNeue";
+  color: var(--mint-green);
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .container {
+    height: 55px;
+  }
+  .logo {
+    height: 35px;
+  }
+
+  .text {
+    font-size: 12px;
+    letter-spacing: 1.3px;
+  }
+}

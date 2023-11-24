@@ -1,0 +1,18 @@
+.button {
+  width: 100px;
+  height: 40px;
+  border-radius: 0;
+  outline: 0;
+  background-color: var(--black);
+  border: 0;
+  border: 1px solid var(--white);
+  color: var(--white);
+  font-family: "BebasNeue";
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}

@@ -1,0 +1,7 @@
+.app{
+    width: 100vw;
+    min-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+}
