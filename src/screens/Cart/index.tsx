@@ -15,6 +15,8 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
   const navigate: NavigateFunction = useNavigate();
   const cart: ICartValue = useAppSelector((state: AppState) => state.cart);
 
+  console.log(cart)
+
   return (
     <div className={c.container}>
       <Header />
@@ -22,7 +24,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
         {/* top field */}
         <div className={c.contentTop}>
           <div>Cart</div>
-          {cart.value.length > 0 && (
+          {cart?.value.length > 0 && (
             <div className={c.clear} onClick={() => dispatch(clearCart())}>
               Clear Cart
             </div>
@@ -31,7 +33,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
 
         {/* item field */}
         <div className={c.itemField}>
-          {cart.value.map((data: ICart) => {
+          {cart?.value.map((data: ICart) => {
             return (
               <div className={c.item} key={data.isbn}>
                 <img src={data.image} alt={data.title} className={c.image} />
@@ -65,7 +67,7 @@ const Cart: React.FC<PropsWithChildren<{}>> = () => {
         </div>
 
         {/* total price, button and empty state are show here */}
-        {cart.value.length > 0 ? (
+        {cart?.value.length > 0 ? (
           <div className={c.priceField}>
             <div className={c.totalPrice}>
               TOTAL PRICE:&nbsp;&nbsp;${cart.totalPrice.toFixed(2)}
